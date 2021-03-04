@@ -32,10 +32,10 @@ API called [`cosDocGetObject`](@ref) and simplifies object look up.  Thus any PD
 object can be classified into the following forms based on how they are
 represented in a document:
 
-- *Direct Objects*: Direct objects are defined where they are referred or used. 
+- *Direct Objects*: Direct objects are defined where they are referred or used.
 - *Indirect Objects*: Indirect objects have reference identifiers, there
   location in a PDF document is described through a Object Reference identifier.
-  
+
 One can access any aspect of PDF using the COS level APIs alone. However, they
 may require you to know the PDF specification in details and they are not the
 most intuititive.
@@ -149,7 +149,7 @@ function cosDocOpen(fp::AbstractString; access::Function=identity)
     return doc
 end
 
-get_key(::Nothing, password) = error(E_DECRYPT_DOCUMENT)            
+get_key(::Nothing, password) = error(E_DECRYPT_DOCUMENT)
 cosDocIsEncrypted(doc::CosDoc) = doc.encrypt !== CosNull
 
 """
@@ -157,7 +157,7 @@ cosDocIsEncrypted(doc::CosDoc) = doc.encrypt !== CosNull
     cosDocGetRoot(doc::CosDoc) -> CosDoc
 ```
 The structural starting point of a PDF document. Also known as document catalog
-dictionary. 
+dictionary.
 """
 cosDocGetRoot(doc::CosDoc) = CosNull
 
@@ -541,7 +541,8 @@ function find_ntree(fn::Function, doc::CosDoc,
     end
     return (inrange, nothing)
 end
-
+include("LabelNumerals.jl")
+include("RomanNumerals.jl")
 using LabelNumerals
 using RomanNumerals
 
@@ -663,7 +664,7 @@ function find_label_for_pageno(doc::CosDoc,
     start = (st === CosNull) ? 1 : get(st)
 
     num = key - pageno + start
-            
+
     pfx = p !== CosNull ? String(p) : ""
     s === CosNull && return pfx
     ln = (s == cn"D") ? LabelNumeral(Int, num; prefix=pfx) :

@@ -1,5 +1,4 @@
-"src" in LOAD_PATH || push!(LOAD_PATH,"src")
-@show pwd()
+include("../src/BinDeps.jl")
 using BinDeps
     
 @static if Base.VERSION < v"1.3-" || (Sys.iswindows() && Sys.WORD_SIZE == 32)
