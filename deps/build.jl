@@ -1,3 +1,5 @@
+include("BinDeps.jl")
+
 using .BinDeps
 
 @static if Base.VERSION < v"1.3-" || (Sys.iswindows() && Sys.WORD_SIZE == 32)

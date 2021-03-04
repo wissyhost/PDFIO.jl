@@ -542,6 +542,8 @@ function find_ntree(fn::Function, doc::CosDoc,
     return (inrange, nothing)
 end
 
+include("LabelNumerals.jl")
+include("RomanNumerals.jl")
 using .LabelNumerals
 using .RomanNumerals
 
