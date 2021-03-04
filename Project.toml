@@ -1,0 +1,36 @@
+name = "PDFIO"
+uuid = "4d0d745f-9d9a-592e-8d18-1ad8a0f42b92"
+authors = ["Sambit Kumar Dash<sambitdash@gmail.com> "]
+version = "0.1.12"
+
+[deps]
+AbstractTrees = "1520ce14-60c1-5f80-bbc7-55ef81b5835c"
+AdobeGlyphList = "715cd884-8f22-55db-b077-449d1f7eef73"
+Compat = "34da2185-b29b-5c13-b0c7-acf172513d20"
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
+Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+OpenSSL_jll = "458c3c95-2e84-50aa-8efc-19380b2a3a95"
+Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
+Primes = "27ebfcd6-29c5-5fa9-bf4b-fb8fc14df3ae"
+Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+Rectangle = "9a9db56c-8f71-5460-add5-cb450131785e"
+SharedArrays = "1a1011a3-84de-559e-8e89-a11a2f7dc383"
+SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
+URIParser = "30578b45-9adc-5946-b283-645ec420af67"
+Zlib_jll = "83775a58-1f1d-513f-b197-d71354ab007a"
+
+[compat]
+AbstractTrees = "0.2.1"
+AdobeGlyphList = "0.1.1"
+Rectangle = "0.1.1"
+julia = "1.0"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+ZipFile = "a5390f91-8eb1-5f08-bee0-b1d1ffed6cea"
+
+[targets]
+test = ["Test", "ZipFile"]
