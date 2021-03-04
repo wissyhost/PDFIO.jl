@@ -541,10 +541,9 @@ function find_ntree(fn::Function, doc::CosDoc,
     end
     return (inrange, nothing)
 end
-include("LabelNumerals.jl")
-include("RomanNumerals.jl")
-using LabelNumerals
-using RomanNumerals
+
+using .LabelNumerals
+using .RomanNumerals
 
 const PDF_PageNumerals = [AlphaNumeral, RomanNumeral, Int]
 

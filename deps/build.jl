@@ -1,6 +1,5 @@
-include("../src/BinDeps.jl")
-using BinDeps
-    
+using .BinDeps
+
 @static if Base.VERSION < v"1.3-" || (Sys.iswindows() && Sys.WORD_SIZE == 32)
     @BinDeps.setup()
 
@@ -48,7 +47,7 @@ using BinDeps
         osslfn  = "OpenSSL_$(osslver)"
         ossldir = "openssl-$(osslfn)"
         osslpkg = "$(osslfn).tar.gz"
-    
+
         provides(Sources,
                  URI("https://github.com/openssl/openssl/archive/$(osslpkg)"),
                  libcrypto, unpacked_dir="$(ossldir)")
