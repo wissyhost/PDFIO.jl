@@ -1,6 +1,5 @@
 # Regex to validate a Roman numeral
-include("RomanNumerals.jl")
-using RomanNumerals
+using ..RomanNumerals
 
 Base.string(num::LabelNumeral{Int}) = begin
     sval = num.val |> Base.string
